@@ -16,5 +16,9 @@ song = convert(input("Song: ").lower())
 singer = convert(strip(input("Artist: ").lower()))
 
 url = "https://www.azlyrics.com/lyrics/" + singer + "/" + song + ".html"
-html = urllib.request.urlopen(url).read()
-print(BeautifulSoup(html, 'html.parser').find_all('div')[21].text)
+
+try:
+	html = urllib.request.urlopen(url).read()
+	print(BeautifulSoup(html, 'html.parser').find_all('div')[21].text)
+except:
+	print("Incorrect Song name or Artist Name")
