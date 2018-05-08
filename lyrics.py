@@ -21,4 +21,4 @@ try:
 	html = urllib.request.urlopen(url).read()
 	print(BeautifulSoup(html, 'html.parser').find_all('div')[21].text)
 except:
-	print("Incorrect Song name or Artist Name")
+	print("Incorrect Song name or Artist name")
